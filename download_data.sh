@@ -5,6 +5,7 @@ mkdir -p data/tshirtslayer
 cd data
 
 wget --continue http://download.tensorflow.org/models/resnet_v1_101_2016_08_28.tar.gz
+wget https://raw.githubusercontent.com/bethesirius/ChosunTruck/master/linux/tensorbox/data/inception_v1.ckpt
 
 #mkdir -p overfeat_rezoom && cd overfeat_rezoom
 #wget --continue http://russellsstewart.com/s/tensorbox/overfeat_rezoom/save.ckpt-150000v2
