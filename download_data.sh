@@ -34,6 +34,16 @@ curl https://tshirtslayer.com/tss-lab/json/train_boxes.json > data/tshirtslayer/
 cat data/tshirtslayer/train_boxes.json|python ./fetch-list.py >> fetch-list.txt
 
 echo "downloading..."
-
 cat fetch-list.txt | parallel
+
+echo "Doing the resize to 640x480 :("
+find  data/tshirtslayer/tss-images -type f |while read fname
+do
+  echo -n .
+  convert -background black -extent 640x480 $fname /tmp/fixed.jpg
+  mv /tmp/fixed.jpg $fname
+done
+echo
+
+
 
